@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+        <label for="">Enter Number:</label>
+        <input type="text" id="value"><br><br>
+        <input type="button" onclick="calculation(this.value)" value="abs">
+        <input type="button" onclick="calculation(this.value)" value="sqrt">
+        <input type="button" onclick="calculation(this.value)" value="cbrt">
+        <input type="button" onclick="calculation(this.value)" value="ceil">
+        <input type="button" onclick="calculation(this.value)" value="round">
+        <input type="button" onclick="calculation(this.value)" value="random"><br><br>
+        <input type="button" onclick="calculation(this.value)" value="floor">
+        <input type="button" onclick="calculation(this.value)" value="sin">
+        <input type="button" onclick="calculation(this.value)" value="cos">
+        <input type="button" onclick="calculation(this.value)" value="min">
+        <input type="button" onclick="calculation(this.value)" value="max">
+        <input type="button" onclick="calculation(this.value)" value="pow">
+    </fieldset>
+
+    <script>
+        function calculation(value)
+        {
+            const number = parseFloat( document.getElementById("value").value);
+
+            switch(value)
+            {
+                case "abs":
+                    alert(Math.abs(number)) 
+                    break;
+                case "sqrt":
+                    alert(Math.sqrt(number));
+                    break;
+                case "cbrt":
+                    alert(Math.cbrt(number));
+                    break;
+                case "ceil":
+                    alert(Math.ceil(number));
+                    break;
+                case "round":
+                    alert(Math.round(number));
+                    break;
+                case "random":
+                    alert(Math.random());
+                    break;
+                case "floor":
+                    alert(Math.floor(number));
+                    break;
+                case "sin":
+                    alert(Math.sin(number));
+                    break;
+                case "cos":
+                    alert(Math.cos(number));
+                    break;
+                case "min":
+                    alert(Math.min(10,20,1));
+                    break;
+                case "max":
+                    alert(Math.sqrt(20,50,60));
+                    break;
+                case "pow":
+                    alert(Math.sqrt(2,3));
+                    break;
+                default:
+                    alert("Wrong button pressed");
+            }
+        }
+    </script>
+</body>
+</html>
