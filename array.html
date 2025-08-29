@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Array Operations</title>
+</head>
+<body>
+    <fieldset>
+        <label for="value">Enter String:</label>
+        <input type="text" id="value"><br><br>
+
+        <input type="button" onclick="arrayfunction(this.value)" value="push">
+        <input type="button" onclick="arrayfunction(this.value)" value="pop">
+        <input type="button" onclick="arrayfunction(this.value)" value="unshift">
+        <input type="button" onclick="arrayfunction(this.value)" value="shift">
+        <input type="button" onclick="arrayfunction(this.value)" value="sort">
+        <input type="button" onclick="arrayfunction(this.value)" value="length"><br><br>
+
+        <p id="result"></p>
+    </fieldset>
+
+    <script>
+      // Declare array globally so it persists
+      let array = [];
+
+      function arrayfunction(value) {
+        let data = document.getElementById("value").value;
+
+        switch(value) {
+            case "push":
+                array.push(data);
+                break;
+            case "pop":
+                array.pop();
+                break;
+            case "unshift":
+                array.unshift(data);
+                break;
+            case "shift":
+                array.shift();
+                break;
+            case "sort":
+                array.sort();
+                break;
+            case "length":
+                document.getElementById("result").innerHTML = "Length: " + array.length;
+                return; 
+        }
+        document.getElementById("result").innerHTML = " ";
+
+        for (let i = 0; i < array.length; i++) {
+            
+        document.getElementById("result").innerHTML += array[i] + " , ";
+        }
+      }
+    </script>
+</body>
+</html>
