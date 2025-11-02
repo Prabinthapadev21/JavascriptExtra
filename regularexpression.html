@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="" onsubmit="return validateform()">
+        <label for="sname">Name</label>
+        <input type="text" name="sname" id="sname"><br><br>
+        <label for="sphone">Phone</label>
+        <input type="text" name="sphone" id="sphone"><br><br>
+        <label for="semail">Email</label>
+        <input type="text" name="semail" id="semail"><br><br>
+        <label for="sdob">Date of birth</label>
+        <input type="text" name="sdob" id="sdob"><br><br>
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+    </form>
+    <script>
+        function validateform(){
+            var errorno = 0;
+            var s_name = document.getElementById("sname").value;
+            var s_phone = document.getElementById("sphone").value;
+            var s_email = document.getElementById("semail").value;
+            var s_dob = document.getElementById("sdob").value;
+
+            var phonepattern = /^\d{10,15}$/;
+            var emailpattern = /^\w+\@(\w+\.)+\w+$/;
+            var datepattern = /^(\d{1,2}\-){2}(\d{2,4})$/;
+
+            if (s_name.trim()=="")
+        {
+            alert("Please enter your name please");
+            errorno++;
+        }
+
+        if (!s_phone.test(phonepattern))
+        {
+            alert("Please enter a valid phone number");
+            errorno++;
+        }
+
+        if (!s_email.test(emailpattern))
+        {
+            alert("Please enter a valid email address");
+            errorno++;
+        }
+
+        if (!s_dob.test(datepattern))
+        {
+            alert("Please enter a valid date of birth");
+            errorno++;
+        }
+
+        if (errorno>0)
+        {
+            return false;
+        }
+        else
+        {
+            return true;
+        }
+        }
+    </script>
+
+</body>
+</html>
