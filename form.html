@@ -1,0 +1,97 @@
+<!-- creating form  and validate form-->
+ <!-- username = min 3 char  and max 30 char password = min 8 char and max 30 char and confirm password same
+  date of birth = dd-mm-yy and phone number = max 10 digits starting 97/98 and email= valid email and date of joining = back date from today
+  and button = submit and cancel-->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <fieldset>
+    <form action="submit" onsubmit="return validateform()">
+        <label for="username">Username</label>
+        <input type="text" name="username" id="username"><br><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password"><br><br>
+        <label for="cpassword">Confirm Password</label>
+        <input type="password" name="cpassword" id="cpassword"><br><br>
+        <label for="dob">Date of Birth</label>
+        <input type="text" name="dob" id="dob"><br><br>
+        <label for="phone">Phone</label>
+        <input type="text" name="phone" id="phone"><br><br>
+        <label for="email">Email</label>
+        <input type="text" name="email" id="email"><br><br>
+        <label for="doj">Date of Joining</label>
+        <input type="text" name="doj" id="doj"><br><br>
+        <input type="submit" value="submit">
+        <input type="reset" value="reset">
+    </form>
+    </fieldset>
+    <script>
+        function validateform(){
+            let username = document.getElementById("username").value;
+            let password = document.getElementById("password").value;
+            let cpassword = document.getElementById("cpassword").value;
+            let dob = document.getElementById("dob").value;
+            let phone = document.getElementById("phone").value;
+            let email = document.getElementById("email").value;
+            let doj = document.getElementById("doj").value;
+
+            var validusername = /^[a-zA-Z0-9]{3,30}$/;
+            var validpassword = /^[a-zA-Z0-9]{8,30}$/;
+            var validphone= /^\d{10}$/;
+            var validemail = /^\w+\@(\w+\.)+\w+$/;
+            var validdate = /^(\d{1,2}\-){2}(\d{2,4})$/;
+            var validdoj = /^(\d{1,2}\-){2}(\d{2,4})$/;
+
+            if (!username.test(validusername))
+            {
+                alert("Please enter a valid username");
+                return false;
+            }
+
+            if (!password.test(validpassword))
+            {
+                alert("Please enter a valid password");
+                return false;
+            }
+
+            if (password != cpassword)
+            {
+                alert("Password and confirm password do not match");
+                return false;
+            }
+
+            if (!dob.test(validdate))
+            {
+                alert("Please enter a valid date of birth");
+                return false;
+            }
+
+            if (!phone.test(validphone))
+            {
+                alert("Please enter a valid phone number");
+                return false;
+            }
+
+            if (!email.test(validemail))
+            {
+                alert("Please enter a valid email address");
+                return false;
+            }
+
+            if (!doj.test(validdoj))
+            {
+                alert("Please enter a valid date of joining");
+                return false;
+            }
+
+            return true;
+        }
+    </script>
+</body>
+</html>
