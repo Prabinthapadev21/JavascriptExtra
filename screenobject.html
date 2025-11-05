@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Screen Info</title>
+</head>
+<body>
+    <input type="button" value="Screen Info" id="btn" onclick="getscreeninfo()">
+
+    <p id="avail_height"></p>
+    <p id="avail_width"></p>
+    <p id="screen_height"></p>
+    <p id="screen_width"></p>
+    <p id="pixel_depth"></p>
+    <p id="color_depth"></p>
+
+    <script type="text/javascript">
+        let avail_height = document.getElementById("avail_height");
+        let avail_width = document.getElementById("avail_width");
+        let screen_height = document.getElementById("screen_height");
+        let screen_width = document.getElementById("screen_width");
+        let pixel_depth = document.getElementById("pixel_depth");
+        let color_depth = document.getElementById("color_depth");
+        
+        function getscreeninfo() {
+            avail_height.innerHTML = "Available Height: " + screen.availHeight;
+            avail_width.innerHTML = "Available Width: " + screen.availWidth;
+            screen_height.innerHTML = "Screen Height: " + screen.height;
+            screen_width.innerHTML = "Screen Width: " + screen.width;
+            pixel_depth.innerHTML = "Pixel Depth: " + screen.pixelDepth;
+            color_depth.innerHTML = "Color Depth: " + screen.colorDepth;
+        }
+    </script>
+</body>
+</html>
